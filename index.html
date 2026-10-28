@@ -1,69 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#6846d7">
-  <title>Falumi — Meu jeito de comunicar e aprender</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#8B36DE">
+  <meta name="description" content="Falumi: comunicação e aprendizagem infantil acessível.">
+  <title>Falumi 💜 — Comunicar e Aprender</title>
   <style>
-    :root { color-scheme: light; --ink:#292345; --purple:#6846d7; --pink:#ff73b9; --yellow:#ffda74; }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; min-height: 100svh; background: linear-gradient(145deg, #ffe8f4 0%, #e8e5ff 55%, #dff8ff 100%); font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; color: var(--ink); display: flex; align-items: center; justify-content: center; padding: 25px 18px; }
-    main { width: min(100%, 440px); text-align: center; }
-    .sparkles { font-size: 2rem; margin: 0 auto 16px; letter-spacing: 7px; }
-    .card { background: rgba(255,255,255,.96); border-radius: 32px; box-shadow: 0 18px 50px #5142a32c; padding: 35px 25px 30px; border: 3px solid white; }
-    .mascot { width: 98px; height: 98px; border-radius: 29px; margin: 0 auto 20px; display: grid; place-items: center; font-size: 3.2rem; background: linear-gradient(135deg,var(--yellow),#ffd0e8); box-shadow: 0 7px 0 #ffd27f; }
-    h1 { font-size: clamp(2rem, 7vw, 2.6rem); margin: 0; letter-spacing: -.06em; color: var(--purple); line-height: 1.17; }
-    p { line-height: 1.5; }
-    .tagline { font-size: 1.05rem; margin: 15px 0 27px; }
-    button { display: block; width: 100%; border: 0; border-radius: 22px; color: white; background: linear-gradient(90deg, #845fea, #ec6aa9); font-size: 1.12rem; font-weight: 750; padding: 17px 18px; box-shadow: 0 7px 0 #b67bd8; cursor: pointer; touch-action: manipulation; }
-    button:active { transform: translateY(4px); box-shadow: 0 3px 0 #b67bd8; }
-    button:focus-visible { outline: 4px solid #263ac8; outline-offset: 4px; }
-    .help { margin: 21px 0 0; min-height: 22px; color: #58516f; font-size: .89rem; }
-    footer { font-weight: 700; color: #655d93; margin-top: 20px; font-size: .87rem; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    :root{--ink:#2f2351;--purple:#7138db;--light:#faf7ff;--shadow:0 7px 20px #4e2e9320}
+    *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:linear-gradient(155deg,#f8d9ff 0%,#d9ecff 46%,#ffe8c7 100%);min-height:100svh;color:var(--ink)}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:4px solid #2c225c;outline-offset:3px}.app{margin:auto;max-width:710px;min-height:100svh;padding:15px 15px 28px}.mast{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 4px 4px}.heart{width:59px;height:59px;filter:drop-shadow(0 3px 5px #7053af44)}h1{font-size:38px;letter-spacing:-1.5px;color:#792cc6;margin:0}.subtitle{text-align:center;font-size:14px;font-weight:600;color:#623e91;margin:3px 0 16px}.tabs{display:flex;gap:10px;background:#ffffffa8;border-radius:18px;padding:6px;box-shadow:var(--shadow);margin-bottom:15px}.tab{border:0;border-radius:13px;flex:1;padding:13px 7px;background:transparent;color:#57368b;font-weight:800;font-size:16px}.tab[aria-selected=true]{background:#8537d6;color:white;box-shadow:0 3px 10px #7a2dcc45}.pane[hidden]{display:none!important}.note{font-size:14px;margin:0 2px 14px;line-height:1.4;color:#513875}.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.action{border:2px solid #ffffffb0;border-radius:22px;min-height:175px;padding:15px 9px;color:#35233e;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:transform .12s ease}.action:active,.tile:active,.word:active{transform:scale(.97)}.symbol{display:block;width:78px;height:78px;line-height:1.15}.name{font-size:21px;font-weight:850;line-height:1.2}.phrase{font-size:12px;line-height:1.35;font-weight:600}.blue{background:#7ed5ff}.orange{background:#ffc36d}.green{background:#83e8ac}.pink{background:#ff9fd3}.lilac{background:#b6a2ff}.red{background:#ffa09d}.extras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0 0}.extra{border:2px solid white;border-radius:14px;background:white;padding:14px 4px;font-size:13px;color:#5a3097;font-weight:800;box-shadow:var(--shadow)}.status{margin:16px 0 0;border-radius:16px;min-height:58px;background:#fffdf4;border:2px solid #fff;padding:13px;text-align:center;font-size:14px;font-weight:700;color:#4b376a}.learning-nav{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}.chip{border:2px solid #cdb5f0;border-radius:999px;background:#fff;padding:9px 12px;color:#6034a2;font-weight:800;font-size:13px}.chip[aria-pressed=true]{background:#7138db;color:#fff;border-color:#7138db}.panel{background:#fffffff0;border:2px solid white;border-radius:22px;padding:15px;box-shadow:var(--shadow);margin-bottom:12px}.panel h2{font-size:23px;margin:1px 0 5px;color:#7631c5}.hint{font-size:13px;color:#64547e;line-height:1.4;margin:3px 0 12px}.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(57px,1fr));gap:8px}.tile{background:#e7d6ff;border:2px solid #d9bdff;border-radius:13px;padding:12px 5px;min-height:55px;font-weight:850;font-size:21px;color:#543282}.syllable-family{margin:14px 0}.syllable-family h3{margin:4px 0 8px;font-size:15px;color:#6233a9}.word-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.word{border:2px solid #f2dafc;border-radius:16px;background:#fff4ca;padding:14px 9px;color:#483068;font-weight:850;min-height:103px}.word .pic{display:block;font-size:31px}.word .compose{display:block;font-size:12px;margin-top:5px;color:#654883}.quiz{margin:10px 0;padding:12px;border-radius:17px;background:#f2e9ff}.quiz-big{font-size:51px;text-align:center}.quiz-question{font-size:18px;text-align:center;font-weight:850;margin:7px}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.choice{padding:13px 3px;border-radius:11px;border:2px solid #c4a6ec;background:#fff;font-weight:850;font-size:15px;color:#4c277e}.choice.correct{background:#89e3ad;border-color:#23a15b}.choice.wrong{background:#ffd0d0;border-color:#d14f64}.quiz-msg{text-align:center;min-height:24px;font-weight:750;margin:8px 0 0}.next{display:block;width:100%;background:#7230c5;color:#fff;border:0;border-radius:13px;padding:12px;margin-top:8px;font-weight:800}.muted{font-size:12px;color:#635478;text-align:center;margin:12px 0 0}.sticky-phrases{position:sticky;bottom:0;z-index:5;background:#f8e5ff;border:2px solid #ffffffc9;padding:8px;border-radius:18px;box-shadow:0 -4px 18px #4e2e9333}.footer{font-size:12px;color:#4d4174;text-align:center;padding:12px 0 0;line-height:1.4}@media(max-width:350px){.action{min-height:137px}.symbol{font-size:42px}.name{font-size:19px}.phrase{font-size:11px}.tab{font-size:14px}.extra{font-size:11px}}@media(min-width:600px){.app{padding:24px}.actions{grid-template-columns:repeat(3,minmax(0,1fr))}}
   </style>
 </head>
 <body>
-  <main>
-    <div class="sparkles" aria-hidden="true">⭐ 🌈 ⭐</div>
-    <section class="card" aria-label="Boas-vindas do Falumi">
-      <div class="mascot" aria-hidden="true">💜</div>
-      <h1>Oi, eu sou o Falumi!</h1>
-      <p class="tagline">Meu jeito de comunicar e aprender.</p>
-      <button id="speak" type="button" aria-describedby="status">🔊 Ouvir minha mensagem</button>
-      <p class="help" id="status" role="status" aria-live="polite">Toque no botão para ouvir o Falumi.</p>
+  <main class="app">
+    <header>
+      <div class="mast">
+        <svg class="heart" role="img" aria-label="Coração colorido" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="h" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f5509e"/><stop offset=".29" stop-color="#ffc339"/><stop offset=".53" stop-color="#4ecf7f"/><stop offset=".75" stop-color="#45bbf1"/><stop offset="1" stop-color="#9a61f4"/></linearGradient></defs><path d="M50 91 14 56C-9 32 18-3 45 18L50 23 55 18C82-3 109 32 86 56Z" fill="url(#h)" stroke="white" stroke-width="3"/></svg>
+        <h1>Falumi</h1>
+      </div><p class="subtitle">Meu jeito de comunicar e aprender! 🌈</p>
+    </header>
+    <nav class="tabs" aria-label="Áreas do aplicativo">
+      <button class="tab" id="tab-communicate" role="tab" aria-selected="true" aria-controls="communicate">💬 Comunicar</button>
+      <button class="tab" id="tab-learn" role="tab" aria-selected="false" aria-controls="learn">📚 Aprender</button>
+    </nav>
+    <section id="communicate" class="pane" role="tabpanel" aria-labelledby="tab-communicate">
+      <p class="note">Toque em um desenho para mostrar e falar o que você precisa.</p>
+      <div class="actions" id="actions"></div>
     </section>
-    <footer>Falumi • Primeira tela de teste</footer>
+    <section id="learn" class="pane" role="tabpanel" aria-labelledby="tab-learn" hidden>
+      <p class="note">Aprender brincando: toque para ouvir letras, números, sílabas e palavras.</p>
+      <div class="learning-nav" id="learning-nav"></div>
+      <div id="lesson"></div>
+    </section>
+    <div class="status" id="status" role="status" aria-live="polite">💖 Pronto para brincar e aprender!</div>
+    <div class="extras sticky-phrases" id="extras" aria-label="Palavras sempre disponíveis"></div>
+    <footer class="footer">Comunicação gratuita • Protótipo educativo • Sem cadastro • Algumas vozes dependem do Android</footer>
   </main>
-  <script>
-    (function () {
-      const button = document.getElementById('speak');
-      const status = document.getElementById('status');
-      button.addEventListener('click', function () {
-        if (!('speechSynthesis' in window)) {
-          status.textContent = 'A voz não está disponível neste navegador.';
-          return;
-        }
-        try {
-          window.speechSynthesis.cancel();
-          const sentence = new SpeechSynthesisUtterance('Oi, eu sou o Falumi! Meu jeito de comunicar e aprender.');
-          sentence.lang = 'pt-BR';
-          sentence.rate = 0.88;
-          sentence.pitch = 1.08;
-          const voices = window.speechSynthesis.getVoices();
-          const pt = voices.find(v => /^pt[-_]BR$/i.test(v.lang)) || voices.find(v => /^pt/i.test(v.lang));
-          if (pt) sentence.voice = pt;
-          sentence.onstart = () => { status.textContent = 'O Falumi está falando!'; };
-          sentence.onend = () => { status.textContent = 'Pode ouvir de novo quando quiser.'; };
-          sentence.onerror = () => { status.textContent = 'Não foi possível reproduzir a voz. Verifique o som do celular.'; };
-          status.textContent = 'Preparando a voz…';
-          window.speechSynthesis.speak(sentence);
-        } catch (e) {
-          status.textContent = 'Não foi possível reproduzir a voz neste navegador.';
-        }
-      });
-    }());
-  </script>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const actions = [
+    ['💧','Água','Estou com sede. Quero água.','blue'],
+    ['🍎','Comida','Estou com fome. Quero comida.','orange'],
+    ['🚽','Banheiro','Quero ir ao banheiro.','green'],
+    ['🧸','Brincar','Quero brincar.','pink'],
+    ['🌙','Dormir','Quero dormir.','lilac'],
+    ['❤️‍🩹','Dor','Estou com dor. Preciso de ajuda.','red']
+  ];
+  const families = [
+    ['B',['BA','BE','BI','BO','BU']], ['C',['CA','CO','CU']],
+    ['D',['DA','DE','DI','DO','DU']], ['F',['FA','FE','FI','FO','FU']],
+    ['G',['GA','GO','GU']], ['J',['JA','JE','JI','JO','JU']],
+    ['L',['LA','LE','LI','LO','LU']], ['M',['MA','ME','MI','MO','MU']],
+    ['N',['NA','NE','NI','NO','NU']], ['P',['PA','PE','PI','PO','PU']],
+    ['R',['RA','RE','RI','RO','RU']], ['S',['SA','SE','SI','SO','SU']],
+    ['T',['TA','TE','TI','TO','TU']], ['V',['VA','VE','VI','VO','VU']],
+    ['Z',['ZA','ZE','ZI','ZO','ZU']], ['CH',['CHA','CHE','CHI','CHO','CHU']],
+    ['LH',['LHA','LHE','LHI','LHO','LHU']], ['NH',['NHA','NHE','NHI','NHO','NHU']],
+    ['QU',['QUA','QUE','QUI','QUO']], ['GU',['GUA','GUE','GUI']]
+  ];
+  const words = [
+    {name:'BOLA',pic:'⚽',parts:['BO','LA']},{name:'CASA',pic:'🏠',parts:['CA','SA']},
+    {name:'PATO',pic:'🦆',parts:['PA','TO']},{name:'GATO',pic:'🐱',parts:['GA','TO']},
+    {name:'SAPO',pic:'🐸',parts:['SA','PO']},{name:'MALA',pic:'🧳',parts:['MA','LA']},
+    {name:'PIPA',pic:'🪁',parts:['PI','PA']},{name:'DADO',pic:'🎲',parts:['DA','DO']},
+    {name:'LUA',pic:'🌙',parts:['LU','A']},{name:'UVA',pic:'🍇',parts:['U','VA']},
+    {name:'VACA',pic:'🐄',parts:['VA','CA']},{name:'BOLO',pic:'🎂',parts:['BO','LO']}
+  ];
+  function setStatus(s){$('status').textContent='🔊 '+s}
+  function say(s){
+    setStatus(s);
+    try {
+      if(window.FalumiAndroid && typeof window.FalumiAndroid.falar==='function') {window.FalumiAndroid.falar(s);return}
+      if(!('speechSynthesis' in window)) { $('status').textContent='📝 '+s+' — voz indisponível neste navegador.';return }
+      window.speechSynthesis.cancel();
+      let u=new SpeechSynthesisUtterance(s);u.lang='pt-BR';u.rate=.88;u.pitch=1.12;
+      const voice=window.speechSynthesis.getVoices().find(v=>v.lang && v.lang.toLowerCase().replace('_','-').startsWith('pt-br'));
+      if(voice)u.voice=voice;
+      u.onerror=()=>{$('status').textContent='📝 '+s+' — não foi possível reproduzir a voz neste navegador.'};
+      window.speechSynthesis.speak(u);
+    } catch(e) {$('status').textContent='📝 '+s+' — voz indisponível nesta visualização.'}
+  }
+  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+  function tile(txt,fn){let b=el('button','tile',txt);b.type='button';b.addEventListener('click',fn);return b}
+  // Desenhos vetoriais infantis, sem baixar imagens da internet.
+  const pictures = {
+    'Água': `<svg viewBox="0 0 100 100" width="78" height="78" aria-hidden="true"><path d="M30 23h40l-7 60H37z" fill="#effaff" stroke="#2265b9" stroke-width="4" stroke-linejoin="round"/><path d="M35 46h30l-4 33H39z" fill="#36bdfa"/><path d="M31 23q20-10 38 0" fill="none" stroke="#2265b9" stroke-width="4"/><circle cx="46" cy="58" r="3" fill="#145199"/><circle cx="57" cy="58" r="3" fill="#145199"/><path d="M46 67q6 6 12 0" fill="none" stroke="#145199" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+    'Comida': `<svg viewBox="0 0 100 100" width="78" height="78" aria-hidden="true"><ellipse cx="50" cy="59" rx="40" ry="25" fill="white" stroke="#568bbf" stroke-width="4"/><ellipse cx="50" cy="58" rx="32" ry="18" fill="#f9e4ac"/><path d="M22 57q12-21 28-3q-5 20-28 3" fill="#f6fff0"/><path d="M48 56q2-21 27-14q12 10 2 24q-18 15-29-10" fill="#de7b3c"/><circle cx="29" cy="51" r="5" fill="#48a763"/><circle cx="36" cy="45" r="5" fill="#48a763"/><circle cx="37" cy="60" r="5" fill="#48a763"/></svg>`,
+    'Banheiro': `<svg viewBox="0 0 100 100" width="78" height="78" aria-hidden="true"><rect x="18" y="13" width="51" height="32" rx="6" fill="#effaff" stroke="#3b87c3" stroke-width="4"/><path d="M32 43h45q1 31-24 35q-23-3-21-35Z" fill="white" stroke="#3b87c3" stroke-width="4"/><path d="M39 77h28v9H34Z" fill="#c7eafb" stroke="#3b87c3" stroke-width="3"/><path d="M32 42h45" stroke="#4aa3e0" stroke-width="5" stroke-linecap="round"/></svg>`,
+    'Brincar': `<svg viewBox="0 0 100 100" width="78" height="78" aria-hidden="true"><circle cx="30" cy="23" r="12" fill="#a86a3d"/><circle cx="70" cy="23" r="12" fill="#a86a3d"/><ellipse cx="50" cy="65" rx="27" ry="23" fill="#ba814e"/><circle cx="50" cy="40" r="28" fill="#c88b57"/><circle cx="40" cy="38" r="3" fill="#3f291d"/><circle cx="60" cy="38" r="3" fill="#3f291d"/><ellipse cx="50" cy="51" rx="13" ry="10" fill="#f8d7a6"/><circle cx="50" cy="47" r="4" fill="#432a22"/><path d="M45 56q5 5 10 0" fill="none" stroke="#432a22" stroke-width="2"/><path d="M45 68l5 7 5-7-5-5Z" fill="#eb406c"/></svg>`,
+    'Dormir': `<svg viewBox="0 0 100 100" width="78" height="78" aria-hidden="true"><path d="M13 69h74v15H13z" fill="#68aee8" stroke="#3973ac" stroke-width="3"/><path d="M21 64h62v12H21z" fill="#b6dfff" stroke="#3973ac" stroke-width="3"/><rect x="17" y="53" width="28" height="16" rx="7" fill="white" stroke="#3973ac" stroke-width="3"/><circle cx="30" cy="45" r="15" fill="#ffcc9b"/><path d="M16 41q9-19 27-5l1 7q-8-8-28-2" fill="#693d27"/><path d="M24 48q4 3 8 0" fill="none" stroke="#744b38" stroke-width="2"/><text x="58" y="30" fill="#7643be" font-size="18" font-weight="bold">Zzz</text></svg>`,
+    'Dor': `<svg viewBox="0 0 100 100" width="78" height="78" aria-hidden="true"><circle cx="50" cy="32" r="20" fill="#ffca99"/><path d="M31 22q17-20 39 0" fill="#70422c"/><path d="M40 30l7-3M53 27l7 3" stroke="#6f392e" stroke-width="3" stroke-linecap="round"/><path d="M42 42q8-7 16 0" stroke="#753c36" stroke-width="3" fill="none"/><rect x="23" y="57" width="54" height="34" rx="18" fill="#f26370"/><path d="M65 52l12-6-4 12 12 1-11 8" fill="#f8cd25" stroke="#dc5645" stroke-width="2"/><path d="M34 62q19 13 31 0" fill="none" stroke="#ffcfac" stroke-width="7" stroke-linecap="round"/></svg>`
+  };
+  actions.forEach(([emoji,title,phrase,color])=>{
+    let b=el('button','action '+color);b.type='button';b.setAttribute('aria-label',title+': '+phrase);
+    const art=el('span','symbol'); art.innerHTML=pictures[title] || emoji;
+    b.append(art,el('span','name',title),el('span','phrase',phrase));
+    b.addEventListener('click',()=>say(phrase));$('actions').appendChild(b)
+  });
+  ['Eu quero','Por favor','Obrigada'].forEach(phrase=>{let b=el('button','extra',phrase);b.type='button';b.addEventListener('click',()=>say(phrase));$('extras').appendChild(b)});
+  function go(tab){let isLearn=tab==='learn';$('communicate').hidden=isLearn;$('learn').hidden=!isLearn;$('tab-communicate').setAttribute('aria-selected',String(!isLearn));$('tab-learn').setAttribute('aria-selected',String(isLearn))}
+  $('tab-communicate').addEventListener('click',()=>go('communicate'));
+  $('tab-learn').addEventListener('click',()=>go('learn'));
+  const lessons=[['Vogais','🔤'],['Alfabeto','🌈'],['Números','🔢'],['Sílabas','🧩'],['Palavras','📖'],['Joguinho','🎮']];
+  let currentLesson=0,questionIndex=0,questionAnswered=false;
+  lessons.forEach(([name,ico],i)=>{let b=el('button','chip',ico+' '+name);b.type='button';b.setAttribute('aria-pressed',String(i===0));b.addEventListener('click',()=>showLesson(i));$('learning-nav').appendChild(b)});
+  function panel(title,description){let box=el('section','panel');box.append(el('h2','',title),el('p','hint',description));return box}
+  function listTiles(items,p){let grid=el('div','tiles');items.forEach(item=>grid.appendChild(tile(item,()=>say(item))));p.appendChild(grid)}
+  function showLesson(i){
+    currentLesson=i; [...$('learning-nav').children].forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));
+    $('lesson').replaceChildren();
+    if(i===0){let p=panel('As vogais','Toque em cada vogal para ouvir o som.');listTiles(['A','E','I','O','U'],p);$('lesson').appendChild(p)}
+    if(i===1){let p=panel('ABC — Alfabeto','Conheça as 26 letras do nosso alfabeto.');listTiles('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),p);$('lesson').appendChild(p)}
+    if(i===2){let p=panel('Números de 1 a 10','Toque nos números e ouça o nome.');let grid=el('div','tiles');for(let n=1;n<=10;n++){grid.appendChild(tile(String(n),()=>say(['um','dois','três','quatro','cinco','seis','sete','oito','nove','dez'][n-1])))}p.appendChild(grid);$('lesson').appendChild(p)}
+    if(i===3){let p=panel('Famílias silábicas','Toque nas sílabas para ouvir a pronúncia. Algumas letras mudam de som conforme a palavra.');families.forEach(([name,items])=>{let fam=el('div','syllable-family');fam.appendChild(el('h3','', 'Família '+name));listTiles(items,fam);p.appendChild(fam)});$('lesson').appendChild(p)}
+    if(i===4){let p=panel('Formando palavras','Toque em uma figura para ouvir a palavra e ver como juntar as sílabas.');let grid=el('div','word-list');words.forEach(w=>{let b=el('button','word');b.type='button';b.append(el('span','pic',w.pic),el('span','',w.name),el('span','compose',w.parts.join(' + ')+' = '+w.name));b.addEventListener('click',()=>say(w.name));grid.appendChild(b)});p.appendChild(grid);$('lesson').appendChild(p)}
+    if(i===5){let p=panel('Jogo: qual é a palavra?','Observe a figura, escute a dica e toque na palavra certa.');let q=el('div','quiz');q.id='quiz';p.appendChild(q);$('lesson').appendChild(p);drawQuestion()}
+  }
+  function drawQuestion(){
+    questionAnswered=false;
+    let w=words[questionIndex%words.length];let options=[w.name,words[(questionIndex+3)%words.length].name,words[(questionIndex+7)%words.length].name];
+    let correctIndex=questionIndex%3;options=options.filter(x=>x!==w.name);options.splice(correctIndex,0,w.name);
+    let q=$('quiz');q.replaceChildren(el('div','quiz-big',w.pic),el('div','quiz-question','Qual palavra combina com a figura?'));
+    let listen=el('button','next','🔊 Ouvir dica');listen.type='button';listen.addEventListener('click',()=>say(w.name));q.appendChild(listen);
+    let choices=el('div','choices');q.appendChild(choices);let msg=el('p','quiz-msg','');q.appendChild(msg);
+    options.forEach(opt=>{let b=el('button','choice',opt);b.type='button';b.addEventListener('click',()=>{
+      if(questionAnswered)return;
+      if(opt===w.name){questionAnswered=true;b.classList.add('correct');msg.textContent='Muito bem! '+w.name+'! 🎉';say('Muito bem! '+w.name);let next=el('button','next','Próxima figura ➜');next.type='button';next.addEventListener('click',()=>{questionIndex++;drawQuestion()});q.appendChild(next)}
+      else{b.classList.add('wrong');msg.textContent='Vamos tentar outra vez!';say('Tente outra vez')}
+    });choices.appendChild(b)})
+  }
+  showLesson(0);
+})();
+</script>
 </body>
 </html>
